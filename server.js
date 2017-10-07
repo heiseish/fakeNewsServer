@@ -10,8 +10,9 @@ app.get("/", function(req, res) {
 	res.sendfile('index.htm')
 });
 
-app.post("/fake", function(req, res) { 
+app.post("/fake/:string", function(req, res) { 
 	/* some server side logic */
-	console.log(req);
-	res.send("Yeah fake as fuck");
+	let result = req.params.string;
+	console.log(result);
+	res.send(result);
 });
