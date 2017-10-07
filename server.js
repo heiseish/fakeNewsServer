@@ -14,6 +14,7 @@ app.post("/fake/:string", function(req, res) {
 	/* some server side logic */
 	let result = req.params.string;
 	console.log(result);
+	res.send(result);
 	res.write(result);
 	res.end();
 });
