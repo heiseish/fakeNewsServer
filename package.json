@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server for FakeNewsDetector",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Dao Truong Giang, Le Minh Phuc",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.1",
+    "nodemon": "^1.12.1"
+  }
+}
