@@ -1,9 +1,16 @@
-var express = require('express'),
-  app = express(),
-  port = process.env.PORT || 3000;
+
+var express = require('express');
+app = express();
+port = process.env.PORT || 3000;
 
 app.listen(port);
 
-app.get('/fakenews', function (req, res) {
-  res.send('Hello World!')
-})
+/* serves main page */
+app.get("/", function(req, res) {
+	res.sendfile('index.htm')
+});
+
+app.post("/fake", function(req, res) { 
+	/* some server side logic */
+	res.send("Yeah fake as fuck");
+});
