@@ -12,5 +12,6 @@ app.get("/", function(req, res) {
 
 app.post("/fake", function(req, res) { 
 	/* some server side logic */
+	console.log(req);
 	res.send("Yeah fake as fuck");
 });
