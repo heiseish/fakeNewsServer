@@ -1,21 +1,26 @@
+'use-strict';
 
-var express = require('express');
-app = express();
+var app = require('express')();
+var bodyParser = require('body-parser');
+
+
 port = process.env.PORT || 3000;
 
 app.listen(port);
 
 /* serves main page */
-app.get("/", function(req, res) {
-	res.sendfile('index.htm')
-});
+// app.get("/", function(req, res) {
+// 	res.sendfile('index.htm')
+// });
 
-app.post("/fake/:string", function(req, res) { 
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
+app.post("/fake", function(req, res) { 
 	/* some server side logic */
-	let result = req.params.string;
-	console.log(result);
-
+	let result = req.body.urlToBeChecked;
+	// console.log(req);
 	// res.write(result);
-	res.send(result);
+	res.send(req.body.urlToBeChecked);
 	// res.end();
 });
