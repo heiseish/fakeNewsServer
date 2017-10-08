@@ -4,7 +4,8 @@
   "description": "server for FakeNewsDetector",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "test": "node test.js"
   },
   "author": "Dao Truong Giang, Le Minh Phuc",
   "license": "MIT",

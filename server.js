@@ -1,5 +1,5 @@
 'use-strict';
-
+var check = require('./api/check');
 var app = require('express')();
 var bodyParser = require('body-parser');
 
@@ -18,9 +18,6 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 
 app.post("/fake", function(req, res) { 
 	/* some server side logic */
-	let result = req.body.urlToBeChecked;
-	// console.log(req);
-	// res.write(result);
-	res.send(req.body.urlToBeChecked);
-	// res.end();
+	let result = check(req.body.urlToBeChecked);
+	res.send(result);
 });
